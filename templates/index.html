@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OCR Project</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <form
+      id="upload-form"
+      method="POST"
+      action="/upload"
+      enctype="multipart/form-data"
+    >
+
+      <div class="button-container">
+        <div class="upload-btn-container">
+          <label for="file-input" class="upload-btn">Choose File</label>
+          <input
+            type="file"
+            name="file"
+            id="file-input"
+            class="file-input"
+            accept="image/*"
+          />
+          </div>
+      </div>
+    </form>
+
+        <div id ="overall-ocr-search-container">
+          <div id="api-search-container">
+            <div class="results-holder" id="results-holder">
+              <div class="ocr-container" id="ocr-container"></div>
+
+            <div class="elastic-container" id="elastic-container"></div>
+          </div> 
+        </div>
+        <button type="button" class="hidden" id="show-ocr-button">Show Entire OCR Response</button>
+        <div id="show-full-ocr-container" class="show-full-ocr-container"> </div>
+        <button type="button" class = hidden id = "ocr-button-bottom"></button>
+      </div>
+
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+  </body>
+</html>
